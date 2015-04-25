@@ -3,7 +3,7 @@ unifyFiles <- function(folder){
     library(dplyr)
     library(tidyr)
     file_list <- list.files(folder)
-    file_list <- file_list[- grep("Total|Explanations of the table", file_list)]
+    file_list <- file_list[- grep("Total|Explanations of the table|Sheet1", file_list)]
     for (file in file_list){
         
         fileName <- paste(folder,file, sep = "")
@@ -33,6 +33,8 @@ unifyFiles <- function(folder){
     
     result <- gather(result, year, value, -c(Data_point,company))
     #gather(result, year, 2006:2013)
-    result <- filter(result, !is.na(value))
+    result <- filter(result, !is.na(value), !Data_point == "")
+    result$value <- as.numeric(result$value) 
+    result
     
 }
