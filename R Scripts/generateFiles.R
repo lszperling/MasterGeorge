@@ -30,17 +30,23 @@ generateStats <- function(dataToProcess){
     means <- c()
     medians <- c()
     sds <- c()
+    mins <- c()
+    maxs <- c()
+    
     observations <- c()
     
     for (dataPoint in fields){
         
-        
+
         info <- filter(dataToProcess, Data_point == dataPoint)$value
         
         measures <- c(measures, dataPoint)
         means <- c(means, mean(info, na.rm = TRUE))
         medians <- c(medians, median(info, na.rm = TRUE))
         sds <- c(sds, sd(info, na.rm = TRUE))
+        mins <- c(mins, min(info, na.rm = TRUE))
+        maxs <- c(maxs, max(info, na.rm = TRUE))
+        
         observations <- c(observations,length(info))
         # outputWithFXD <- rbind(outputWithFXD, c(dataPoint, mean(info, na.rm = TRUE), median(info, na.rm = TRUE), sd(info, na.rm = TRUE)))
         
@@ -52,10 +58,13 @@ generateStats <- function(dataToProcess){
     means <- c(means, mean(info, na.rm = TRUE))
     medians <- c(medians, median(info, na.rm = TRUE))
     sds <- c(sds, sd(info, na.rm = TRUE))
+    mins <- c(mins, min(info, na.rm = TRUE))
+    maxs <- c(maxs, max(info, na.rm = TRUE))
+    
     observations <- c(observations,length(info))
     
-    titles <- c("Measure", "Mean", "Median", "SD", "Observations")
-    outputWithFXD <- data.frame(measures, means, medians, sds, observations)
+    titles <- c("Measure", "Mean", "Median", "SD", "MIN", "MAX", "Observations")
+    outputWithFXD <- data.frame(measures, means, medians, sds, mins, maxs, observations)
     colnames(outputWithFXD) <- titles
     outputWithFXD
 }
