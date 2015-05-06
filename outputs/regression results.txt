@@ -1,0 +1,121 @@
+------------------
+Call:
+lm(formula = TQ ~ factor(FXD) + SIZE + FSTS + RD + Leverage + 
+    Qratio + Capex + ROA + factor(DD), data = info1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1.48025 -0.24974 -0.01345  0.23523  1.49126 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   1.046136   0.160348   6.524 2.78e-10 ***
+factor(FXD)1  0.145617   0.075624   1.926 0.055076 .  
+SIZE         -0.117572   0.017263  -6.811 5.05e-11 ***
+FSTS          0.540679   0.128725   4.200 3.49e-05 ***
+RD            0.144949   0.016606   8.729  < 2e-16 ***
+Leverage      0.030130   0.042549   0.708 0.479391    
+Qratio        0.095256   0.026922   3.538 0.000464 ***
+Capex         0.006942   0.008512   0.816 0.415406    
+ROA           1.781505   0.255203   6.981 1.79e-11 ***
+factor(DD)1  -0.134653   0.094914  -1.419 0.156995    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4367 on 310 degrees of freedom
+Multiple R-squared:  0.4414,	Adjusted R-squared:  0.4252 
+F-statistic: 27.22 on 9 and 310 DF,  p-value: < 2.2e-16
+
+
+
+-----------------------
+summary(lm(TQ ~ DERIV + SIZE + FSTS + RD + Leverage + Qratio + Capex + ROA + factor(DD), info1))
+
+Call:
+lm(formula = TQ ~ DERIV + SIZE + FSTS + RD + Leverage + Qratio + 
+    Capex + ROA + factor(DD), data = info1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.82554 -0.16945  0.00316  0.20759  1.03468 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  0.80804    0.21694   3.725 0.000252 ***
+DERIV       -0.10660    0.08350  -1.277 0.203130    
+SIZE        -0.06294    0.01846  -3.409 0.000784 ***
+FSTS         0.46403    0.16583   2.798 0.005626 ** 
+RD          -1.35101    0.57826  -2.336 0.020435 *  
+Leverage    -0.04977    0.05819  -0.855 0.393341    
+Qratio       0.10974    0.05602   1.959 0.051468 .  
+Capex       -0.04951    0.06807  -0.727 0.467895    
+ROA          3.48178    0.34246  10.167  < 2e-16 ***
+factor(DD)1 -0.26278    0.12126  -2.167 0.031370 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.3252 on 206 degrees of freedom
+Multiple R-squared:  0.555,	Adjusted R-squared:  0.5356 
+F-statistic: 28.55 on 9 and 206 DF,  p-value: < 2.2e-16
+---------------
+
+
+summary(lm(TQ ~ DE + SIZE + FSTS + RD + Leverage + Qratio + Capex + ROA + factor(DD), info1))
+
+Call:
+lm(formula = TQ ~ DE + SIZE + FSTS + RD + Leverage + Qratio + 
+    Capex + ROA + factor(DD), data = info1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.80006 -0.18094 -0.01248  0.21795  1.04262 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  7.532e-01  2.126e-01   3.543 0.000489 ***
+DE          -1.156e-05  1.745e-05  -0.662 0.508493    
+SIZE        -6.284e-02  1.852e-02  -3.394 0.000827 ***
+FSTS         4.473e-01  1.658e-01   2.697 0.007575 ** 
+RD          -1.555e+00  5.586e-01  -2.784 0.005875 ** 
+Leverage    -3.951e-02  5.770e-02  -0.685 0.494315    
+Qratio       1.308e-01  5.430e-02   2.409 0.016872 *  
+Capex       -1.293e-01  2.780e-02  -4.653 5.86e-06 ***
+ROA          3.417e+00  3.401e-01  10.048  < 2e-16 ***
+factor(DD)1 -2.175e-01  1.151e-01  -1.890 0.060136 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.3261 on 206 degrees of freedom
+Multiple R-squared:  0.5525,	Adjusted R-squared:  0.5329 
+F-statistic: 28.26 on 9 and 206 DF,  p-value: < 2.2e-16
+
+-----------------------
+
+summary(lm(TQ ~ factor(DDE) + SIZE + FSTS + RD + Leverage + Qratio + Capex + ROA + factor(DD), info1))
+
+Call:
+lm(formula = TQ ~ factor(DDE) + SIZE + FSTS + RD + Leverage + 
+    Qratio + Capex + ROA + factor(DD), data = info1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.77546 -0.17875 -0.00677  0.21098  1.02883 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   0.76437    0.21330   3.584 0.000423 ***
+factor(DDE)1 -0.03658    0.04592  -0.797 0.426561    
+SIZE         -0.06116    0.01863  -3.283 0.001209 ** 
+FSTS          0.43819    0.16623   2.636 0.009028 ** 
+RD           -1.55742    0.55836  -2.789 0.005778 ** 
+Leverage     -0.04168    0.05779  -0.721 0.471598    
+Qratio        0.12787    0.05418   2.360 0.019198 *  
+Capex        -0.12935    0.02778  -4.656 5.78e-06 ***
+ROA           3.39266    0.34168   9.929  < 2e-16 ***
+factor(DD)1  -0.21746    0.11491  -1.892 0.059841 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.3259 on 206 degrees of freedom
+Multiple R-squared:  0.5529,	Adjusted R-squared:  0.5334 
+F-statistic: 28.31 on 9 and 206 DF,  p-value: < 2.2e-16
