@@ -1,0 +1,268 @@
+> 
+> 
+> summary(plm(TQ ~ factor(FXD) + SIZE + FSTS + RD + Leverage + Qratio + Capex + ROA + factor(DD), info1, model = "pooling"))
+Oneway (individual) effect Pooling Model
+
+Call:
+plm(formula = TQ ~ factor(FXD) + SIZE + FSTS + RD + Leverage + 
+    Qratio + Capex + ROA + factor(DD), data = info1, model = "pooling")
+
+Balanced Panel: n=40, T=8, N=320
+
+Residuals :
+   Min. 1st Qu.  Median 3rd Qu.    Max. 
+-1.4800 -0.2500 -0.0134  0.2350  1.4900 
+
+Coefficients :
+               Estimate Std. Error t-value  Pr(>|t|)    
+(Intercept)   1.0461362  0.1603480  6.5242 2.783e-10 ***
+factor(FXD)1  0.1456174  0.0756242  1.9255 0.0550764 .  
+SIZE         -0.1175720  0.0172633 -6.8105 5.055e-11 ***
+FSTS          0.5406792  0.1287252  4.2003 3.489e-05 ***
+RD            0.1449488  0.0166062  8.7286 < 2.2e-16 ***
+Leverage      0.0301303  0.0425485  0.7081 0.4793906    
+Qratio        0.0952558  0.0269215  3.5383 0.0004644 ***
+Capex         0.0069419  0.0085124  0.8155 0.4154064    
+ROA           1.7815049  0.2552030  6.9807 1.790e-11 ***
+factor(DD)1  -0.1346530  0.0949139 -1.4187 0.1569950    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Total Sum of Squares:    105.82
+Residual Sum of Squares: 59.111
+R-Squared      :  0.44142 
+      Adj. R-Squared :  0.42763 
+F-statistic: 27.2201 on 9 and 310 DF, p-value: < 2.22e-16
+> summary(plm(TQ ~ factor(FXD) + SIZE + FSTS + RD + Leverage + Qratio + Capex + ROA + factor(DD), info1 , index = "company", model = "within"))
+Oneway (individual) effect Within Model
+
+Call:
+plm(formula = TQ ~ factor(FXD) + SIZE + FSTS + RD + Leverage + 
+    Qratio + Capex + ROA + factor(DD), data = info1, model = "within", 
+    index = "company")
+
+Balanced Panel: n=40, T=8, N=320
+
+Residuals :
+     Min.   1st Qu.    Median   3rd Qu.      Max. 
+-0.814000 -0.105000  0.000308  0.141000  0.940000 
+
+Coefficients :
+              Estimate Std. Error t-value  Pr(>|t|)    
+SIZE        -0.0868275  0.0635617 -1.3660   0.17306    
+FSTS         0.1801226  0.2791539  0.6452   0.51931    
+RD           0.0663068  0.0127983  5.1809 4.306e-07 ***
+Leverage     0.0489117  0.0367308  1.3316   0.18410    
+Qratio       0.0478527  0.0267811  1.7868   0.07508 .  
+Capex       -0.0061393  0.0055098 -1.1143   0.26615    
+ROA          0.4490923  0.1867900  2.4043   0.01687 *  
+factor(DD)1  0.1909542  0.1013480  1.8841   0.06061 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Total Sum of Squares:    21.877
+Residual Sum of Squares: 18.697
+R-Squared      :  0.14536 
+      Adj. R-Squared :  0.12356 
+F-statistic: 5.78304 on 8 and 272 DF, p-value: 8.0914e-07
+> 
+> summary(plm(TQ ~ factor(DDE) + SIZE + FSTS + RD + Leverage + Qratio + Capex + ROA + factor(DD), info2, model = "pooling"))
+Oneway (individual) effect Pooling Model
+
+Call:
+plm(formula = TQ ~ factor(DDE) + SIZE + FSTS + RD + Leverage + 
+    Qratio + Capex + ROA + factor(DD), data = info2, model = "pooling")
+
+Balanced Panel: n=27, T=8, N=216
+
+Residuals :
+    Min.  1st Qu.   Median  3rd Qu.     Max. 
+-0.77500 -0.17900 -0.00677  0.21100  1.03000 
+
+Coefficients :
+              Estimate Std. Error t-value  Pr(>|t|)    
+(Intercept)   0.764370   0.213299  3.5836 0.0004231 ***
+factor(DDE)1 -0.036584   0.045922 -0.7967 0.4265612    
+SIZE         -0.061162   0.018633 -3.2825 0.0012086 ** 
+FSTS          0.438190   0.166233  2.6360 0.0090279 ** 
+RD           -1.557422   0.558360 -2.7893 0.0057779 ** 
+Leverage     -0.041680   0.057792 -0.7212 0.4715979    
+Qratio        0.127873   0.054178  2.3602 0.0191979 *  
+Capex        -0.129347   0.027782 -4.6558 5.778e-06 ***
+ROA           3.392655   0.341683  9.9292 < 2.2e-16 ***
+factor(DD)1  -0.217463   0.114914 -1.8924 0.0598406 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Total Sum of Squares:    48.949
+Residual Sum of Squares: 21.885
+R-Squared      :  0.5529 
+      Adj. R-Squared :  0.52731 
+F-statistic: 28.3055 on 9 and 206 DF, p-value: < 2.22e-16
+> summary(plm(TQ ~ factor(DDE) + SIZE + FSTS + RD + Leverage + Qratio + Capex + ROA + factor(DD), info2 , index = "company", model = "within"))
+Oneway (individual) effect Within Model
+
+Call:
+plm(formula = TQ ~ factor(DDE) + SIZE + FSTS + RD + Leverage + 
+    Qratio + Capex + ROA + factor(DD), data = info2, model = "within", 
+    index = "company")
+
+Balanced Panel: n=27, T=8, N=216
+
+Residuals :
+    Min.  1st Qu.   Median  3rd Qu.     Max. 
+-0.63900 -0.10200  0.00693  0.13700  0.67900 
+
+Coefficients :
+              Estimate Std. Error t-value  Pr(>|t|)    
+factor(DDE)1 -0.027198   0.035547 -0.7651 0.4451921    
+SIZE         -0.263517   0.091994 -2.8645 0.0046734 ** 
+FSTS         -0.493883   0.361069 -1.3678 0.1730692    
+RD            1.610884   0.766294  2.1022 0.0369290 *  
+Leverage      0.035514   0.078021  0.4552 0.6495259    
+Qratio        0.149638   0.083072  1.8013 0.0733287 .  
+Capex        -0.014877   0.035989 -0.4134 0.6798331    
+ROA           1.185615   0.339619  3.4910 0.0006052 ***
+factor(DD)1   0.104907   0.127899  0.8202 0.4131679    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Total Sum of Squares:    12.045
+Residual Sum of Squares: 9.8828
+R-Squared      :  0.17953 
+      Adj. R-Squared :  0.14961 
+F-statistic: 4.37635 on 9 and 180 DF, p-value: 3.5123e-05
+> 
+> summary(plm(TQ ~ DERIV + SIZE + FSTS + RD + Leverage + Qratio + Capex + ROA + factor(DD), info4, model = "pooling"))
+Oneway (individual) effect Pooling Model
+
+Call:
+plm(formula = TQ ~ DERIV + SIZE + FSTS + RD + Leverage + Qratio + 
+    Capex + ROA + factor(DD), data = info4, model = "pooling")
+
+Balanced Panel: n=27, T=8, N=216
+
+Residuals :
+    Min.  1st Qu.   Median  3rd Qu.     Max. 
+-0.82600 -0.16900  0.00316  0.20800  1.03000 
+
+Coefficients :
+             Estimate Std. Error t-value  Pr(>|t|)    
+(Intercept)  0.808042   0.216943  3.7247 0.0002525 ***
+DERIV       -0.106604   0.083497 -1.2767 0.2031299    
+SIZE        -0.062941   0.018463 -3.4091 0.0007841 ***
+FSTS         0.464027   0.165830  2.7982 0.0056262 ** 
+RD          -1.351010   0.578262 -2.3363 0.0204351 *  
+Leverage    -0.049772   0.058188 -0.8554 0.3933405    
+Qratio       0.109741   0.056021  1.9590 0.0514680 .  
+Capex       -0.049506   0.068072 -0.7273 0.4678951    
+ROA          3.481775   0.342463 10.1669 < 2.2e-16 ***
+factor(DD)1 -0.262781   0.121256 -2.1672 0.0313695 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Total Sum of Squares:    48.949
+Residual Sum of Squares: 21.78
+R-Squared      :  0.55505 
+      Adj. R-Squared :  0.52935 
+F-statistic: 28.5521 on 9 and 206 DF, p-value: < 2.22e-16
+> summary(plm(TQ ~ DERIV + SIZE + FSTS + RD + Leverage + Qratio + Capex + ROA + factor(DD), info4 , index = "company", model = "within"))
+Oneway (individual) effect Within Model
+
+Call:
+plm(formula = TQ ~ DERIV + SIZE + FSTS + RD + Leverage + Qratio + 
+    Capex + ROA + factor(DD), data = info4, model = "within", 
+    index = "company")
+
+Balanced Panel: n=27, T=8, N=216
+
+Residuals :
+   Min. 1st Qu.  Median 3rd Qu.    Max. 
+-0.6690 -0.1080  0.0143  0.1340  0.7400 
+
+Coefficients :
+             Estimate Std. Error t-value  Pr(>|t|)    
+DERIV       -0.157903   0.073385 -2.1517 0.0327534 *  
+SIZE        -0.270175   0.089297 -3.0256 0.0028452 ** 
+FSTS        -0.437247   0.358144 -1.2209 0.2237328    
+RD           2.140922   0.800988  2.6729 0.0082121 ** 
+Leverage     0.010769   0.077858  0.1383 0.8901463    
+Qratio       0.115466   0.082135  1.4058 0.1615081    
+Capex        0.090692   0.061344  1.4784 0.1410417    
+ROA          1.283472   0.337253  3.8057 0.0001937 ***
+factor(DD)1  0.080385   0.127005  0.6329 0.5275824    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Total Sum of Squares:    12.045
+Residual Sum of Squares: 9.6663
+R-Squared      :  0.19751 
+      Adj. R-Squared :  0.16459 
+F-statistic: 4.92228 on 9 and 180 DF, p-value: 6.5449e-06
+> 
+> summary(plm(TQ ~ DE + SIZE + FSTS + RD + Leverage + Qratio + Capex + ROA + factor(DD), info3, model = "pooling"))
+Oneway (individual) effect Pooling Model
+
+Call:
+plm(formula = TQ ~ DE + SIZE + FSTS + RD + Leverage + Qratio + 
+    Capex + ROA + factor(DD), data = info3, model = "pooling")
+
+Balanced Panel: n=27, T=8, N=216
+
+Residuals :
+   Min. 1st Qu.  Median 3rd Qu.    Max. 
+-0.8000 -0.1810 -0.0125  0.2180  1.0400 
+
+Coefficients :
+               Estimate  Std. Error t-value  Pr(>|t|)    
+(Intercept)  7.5323e-01  2.1257e-01  3.5435 0.0004885 ***
+DE          -1.1557e-05  1.7449e-05 -0.6623 0.5084927    
+SIZE        -6.2841e-02  1.8516e-02 -3.3938 0.0008266 ***
+FSTS         4.4729e-01  1.6585e-01  2.6971 0.0075746 ** 
+RD          -1.5550e+00  5.5860e-01 -2.7837 0.0058749 ** 
+Leverage    -3.9508e-02  5.7703e-02 -0.6847 0.4943149    
+Qratio       1.3081e-01  5.4300e-02  2.4091 0.0168720 *  
+Capex       -1.2933e-01  2.7797e-02 -4.6526 5.859e-06 ***
+ROA          3.4173e+00  3.4009e-01 10.0482 < 2.2e-16 ***
+factor(DD)1 -2.1754e-01  1.1509e-01 -1.8902 0.0601361 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Total Sum of Squares:    48.949
+Residual Sum of Squares: 21.906
+R-Squared      :  0.55248 
+      Adj. R-Squared :  0.5269 
+F-statistic: 28.257 on 9 and 206 DF, p-value: < 2.22e-16
+> summary(plm(TQ ~ DE + SIZE + FSTS + RD + Leverage + Qratio + Capex + ROA + factor(DD), info3 , index = "company", model = "within"))
+Oneway (individual) effect Within Model
+
+Call:
+plm(formula = TQ ~ DE + SIZE + FSTS + RD + Leverage + Qratio + 
+    Capex + ROA + factor(DD), data = info3, model = "within", 
+    index = "company")
+
+Balanced Panel: n=27, T=8, N=216
+
+Residuals :
+    Min.  1st Qu.   Median  3rd Qu.     Max. 
+-0.62200 -0.10900  0.00112  0.13600  0.68600 
+
+Coefficients :
+               Estimate  Std. Error t-value  Pr(>|t|)    
+DE          -8.7106e-06  1.3517e-05 -0.6444 0.5201325    
+SIZE        -2.7439e-01  9.0381e-02 -3.0359 0.0027538 ** 
+FSTS        -5.1014e-01  3.6181e-01 -1.4100 0.1602739    
+RD           1.6260e+00  7.6945e-01  2.1132 0.0359583 *  
+Leverage     3.7855e-02  7.7856e-02  0.4862 0.6274021    
+Qratio       1.4893e-01  8.3282e-02  1.7883 0.0754071 .  
+Capex       -1.6309e-02  3.5917e-02 -0.4541 0.6503264    
+ROA          1.2086e+00  3.3917e-01  3.5634 0.0004687 ***
+factor(DD)1  1.0788e-01  1.2778e-01  0.8443 0.3996233    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Total Sum of Squares:    12.045
+Residual Sum of Squares: 9.8921
+R-Squared      :  0.17876 
+      Adj. R-Squared :  0.14897 
+F-statistic: 4.35338 on 9 and 180 DF, p-value: 3.7696e-05
